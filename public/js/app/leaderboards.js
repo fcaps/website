@@ -16,7 +16,7 @@ let currentDate = new Date(minusTimeFilter).toISOString();
 
 async function leaderboardOneJSON(leaderboardFile) {
   //Check which category is active
-  const response = await fetch(`leaderboards/${leaderboardFile}.json`);
+  const response = await fetch(`js/app/members/${leaderboardFile}.json`);
   currentLeaderboard = leaderboardFile;
   const data = await response.json();
   return await data;
@@ -37,10 +37,6 @@ function leaderboardUpdate() {
   //determines the current page, whether to add or substract the missing players in case we pressed next or previous then it will add or substract players
   let playerIndex = pageNumber * 100;
   let next100Players = (1 + pageNumber) * 100;
-  
-  if (next100Players > playerList.length) {
-      next100Players = playerList.length
-  }
 
   // Function to add player first second and third background
   if (playerIndex === 0) {
@@ -56,14 +52,14 @@ function leaderboardUpdate() {
     if (playerIndex < 0) {
       playerIndex = 0;
     }
-    let rating = playerList[playerIndex].rating;
-    let winRate = playerList[playerIndex].wonGames / playerList[playerIndex].totalgames * 100;
+    let rating = playerList[playerIndex][1].rating;
+    let winRate = playerList[playerIndex][1].wonGames / playerList[playerIndex][1].totalgames * 100;
     insertPlayer.insertAdjacentHTML('beforebegin', `<div class="newLeaderboardContainer leaderboardDelete column12 leaderboardPlayer${playerIndex}">
   <div class="column1">
     <h3>${playerIndex + 1}</h3>
   </div>
   <div class="column4">
-    <h3>${playerList[playerIndex].label}</h3>
+    <h3>${playerList[playerIndex][0].label}</h3>
   </div>
   <div class="column2">
     <h3>${rating.toFixed(0)}</h3>
@@ -72,7 +68,7 @@ function leaderboardUpdate() {
     <h3>${winRate.toFixed(1)}%</h3>
   </div>
   <div class="column3">
-    <h3>${playerList[playerIndex].totalgames}</h3>
+    <h3>${playerList[playerIndex][1].totalgames}</h3>
   </div>
 </div>`
     );
@@ -119,7 +115,7 @@ function timeCheck(timeSelected) {
     playerList.push(timedOutPlayers[i]);
   }
   // Sort players by their rating
-  playerList.sort((playerA, playerB) => playerB.rating - playerA.rating);
+  playerList.sort((playerA, playerB) => playerB[1].rating - playerA[1].rating);
   
   //clean slate
   timedOutPlayers = [];
@@ -127,7 +123,7 @@ function timeCheck(timeSelected) {
   //kick all the players that dont meet the time filter
   for (let i = 0; i < playerList.length; i++) {
 
-    if (currentDate > playerList[i].date) {
+    if (currentDate > playerList[i][1].date) {
 
       timedOutPlayers.push(playerList[i]);
       playerList.splice(i, 1);
@@ -187,16 +183,16 @@ function findPlayer(playerName) {
   leaderboardOneJSON(currentLeaderboard)
     .then(() => {
       //input from the searchbar becomes playerName and then searchPlayer is their index number
-      let searchPlayer = playerList.findIndex(element => element.label.toLowerCase() === playerName.toLowerCase());
+      let searchPlayer = playerList.findIndex(element => element[0].label.toLowerCase() === playerName.toLowerCase());
 
-      let rating = playerList[searchPlayer].rating;
-      let winRate = playerList[searchPlayer].wonGames / playerList[searchPlayer].totalgames * 100;
+      let rating = playerList[searchPlayer][1].rating;
+      let winRate = playerList[searchPlayer][1].wonGames / playerList[searchPlayer][1].totalgames * 100;
       insertSearch.insertAdjacentHTML('beforebegin', `<div class="newLeaderboardContainer leaderboardDeleteSearch column12">
   <div class="column1">
     <h3>${searchPlayer + 1}</h3>
   </div>
   <div class="column4">
-    <h3>${playerList[searchPlayer].label} ${currentLeaderboard} </h3>
+    <h3>${playerList[searchPlayer][0].label} ${currentLeaderboard} </h3>
   </div>
   <div class="column2">
     <h3>${rating.toFixed(0)}</h3>
@@ -205,7 +201,7 @@ function findPlayer(playerName) {
     <h3>${winRate.toFixed(1)}%</h3>
   </div>
   <div class="column3">
-    <h3>${playerList[searchPlayer].totalgames}</h3>
+    <h3>${playerList[searchPlayer][1].totalgames}</h3>
   </div>
 </div>`);
 
@@ -216,12 +212,6 @@ function findPlayer(playerName) {
   });
 }
 
-function selectPlayer(name) {
-    const element = document.getElementById('input')
-    element.value = name
-    element.dispatchEvent(new KeyboardEvent('keyup', {'key': 'Enter'}));
-}
-
 //Gets called from the HTML search input form
 function pressEnter(event) {
   let inputText = event.target.value;
@@ -230,17 +220,17 @@ function pressEnter(event) {
     document.querySelectorAll('.removeOldSearch').forEach(element => element.remove());
   } else {
     let regex = `^${inputText.toLowerCase()}`;
-    let searchName = playerList.filter(element => element.label.toLowerCase().match(regex));
+    let searchName = playerList.filter(element => element[0].label.toLowerCase().match(regex));
 
     document.querySelectorAll('.removeOldSearch').forEach(element => element.remove());
     for (let player of searchName.slice(0, 5)) {
-      document.querySelector('#placeMe').insertAdjacentHTML('afterend', `<li class="removeOldSearch" style="cursor: pointer" onclick="selectPlayer('${player.label}')">${player.label}</li>`);
+      document.querySelector('#placeMe').insertAdjacentHTML('afterend', `<li class="removeOldSearch"> ${player[0].label} </li>`);
     }
 
     if (event.key === 'Enter') {
       document.querySelector('#searchResults').classList.remove('appearWhenSearching');
       document.querySelector('#clearSearch').classList.remove('appearWhenSearching');
-      findPlayer(inputText.trim());
+      findPlayer(inputText);
     }
   }
   document.querySelector('#errorLog').innerText = '';

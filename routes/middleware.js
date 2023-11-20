@@ -56,3 +56,21 @@ exports.flashMessage =  function(req, res, next) {
     next();
   }
 };
+
+exports.isAuthenticated = (req, res, next) => {
+    if (req.isAuthenticated()) {
+        return next()
+    }
+
+    if (req.xhr || req.headers.accept.indexOf('json') > -1) {
+        return res.status(401).json({error: 'Unauthorized'})
+    }
+    
+    return res.redirect('/login')
+}
+
+
+exports.copyFlashMessagesToLocals = (req, res, next) => {
+    res.locals.message = req.flash()
+    next()
+}

@@ -1,12 +1,10 @@
 const request = require('supertest')
 const express = require('express')
-const newsRouter = require( "../../routes/views/news")
+const bootstrap = require( "../../bootstrap")
 const fs = require('fs')
 
 const app = new express();
-app.set('views', 'templates/views');
-app.set('view engine', 'pug');
-app.use("/news", newsRouter)
+bootstrap(app)
 
 describe('News Routes', function () {
     const testFile =  fs.readFileSync('tests/integration/testData/news.json',{encoding:'utf8', flag:'r'})

@@ -3,6 +3,7 @@ extends ../layouts/default
 block bannerMixin
 
 block content
+  script(type='module' src="../../js/app/leaderboards.js")
   .leaderboardBackground
     .mainLeaderboardContainer
       .leaderboardContainer.column12.centerYourself
@@ -88,5 +89,6 @@ block content
           .categoryButton(onclick= `pageChange(pageNumber + 1)`).pageButton Next
 
 block js
+
   script( src="../../js/app/leaderboards.js")
   
