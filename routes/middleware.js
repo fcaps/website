@@ -57,16 +57,22 @@ exports.flashMessage =  function(req, res, next) {
   }
 };
 
-exports.isAuthenticated = (req, res, next) => {
-    if (req.isAuthenticated()) {
-        return next()
-    }
+exports.isAuthenticated = (redirectAfterLogin = null) => {
+    return (req, res, next) => {
+        if (req.isAuthenticated()) {
+            return next()
+        }
 
-    if (req.xhr || req.headers.accept.indexOf('json') > -1) {
-        return res.status(401).json({error: 'Unauthorized'})
+        if (req.xhr || req.headers.accept.indexOf('json') > -1) {
+            return res.status(401).json({error: 'Unauthorized'})
+        }
+
+        if (req.session) {
+            req.session.redirectUrl = redirectAfterLogin || req.headers.referer || req.originalUrl || req.url;
+        }
+
+        return res.redirect('/login')
     }
-    
-    return res.redirect('/login')
 }
 
 
