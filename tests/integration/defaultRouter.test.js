@@ -1,5 +1,5 @@
 const express = require('express')
-const supertestSession = require("supertest-session")
+const supertestSession = require('supertest-session')
 const fafApp = require('../../fafApp')
 
 let testSession = null
@@ -26,8 +26,8 @@ describe('Default Routes', function () {
         '/play'
     ]
 
-    test.each(arr)("responds with OK to %p", (async (route) => {
+    test.each(arr)('responds with OK to %p', async (route) => {
         const res = await testSession.get(route)
         expect(res.statusCode).toBe(200)
-    }))
+    })
 })

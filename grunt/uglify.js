@@ -1,6 +1,6 @@
 module.exports = {
     dist: {
-        options:{
+        options: {
             compress: true,
             mangle: true
         },
@@ -8,4 +8,4 @@ module.exports = {
             'public/js/report.min.js': 'public/js/report.min.js'
         }
     }
-};
+}

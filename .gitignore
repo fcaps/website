@@ -46,7 +46,7 @@ public/styles/css/*
 .env
 .env.faf.xyz
 
-public/js/*.js
+src/browser/js/*.js
 
 #Sessions
 sessions
