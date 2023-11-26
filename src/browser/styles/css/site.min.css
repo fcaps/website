@@ -1,0 +1,3122 @@
+/* Font Variables */
+.gridMainContainer {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr;
+  grid-auto-columns: auto;
+  transition: 0.4s;
+  gap: 0;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+}
+
+.gridItem {
+  position: relative;
+  overflow: hidden;
+  object-fit: contain;
+  display: grid;
+  transition: 0.4s;
+}
+
+.gridImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  overflow: hidden;
+  transition: 0.4s;
+}
+
+.landingButton {
+  font-size: 1.2em;
+  margin: 0.2em 1em;
+  padding: 0.8em;
+}
+
+@media (max-width: 800px) {
+  .landingButton {
+    margin: 8px;
+    font-size: 14px;
+    padding: 0.6em;
+  }
+}
+button {
+  color: #000000;
+  border: 0px solid #262626;
+  background-color: #ec9d36;
+  font-family: Chakra Petch, Electrolize, "Russo One";
+  border-radius: 20px;
+  font-size: 1.5em;
+  justify-self: center;
+  transition: 0.4s;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  font-size: 1em;
+  margin: 0.2em 1em;
+  padding: 0.8em;
+}
+button:hover {
+  color: #ffffff;
+  background-color: #731d00;
+}
+
+@media (max-width: 800px) {
+  button {
+    margin: 0px 8px 8px 8px;
+    font-size: 12px;
+    padding: 0.6em;
+  }
+}
+.smallButton {
+  color: #000000;
+  border: 0px solid #262626;
+  background-color: #ec9d36;
+  font-family: Chakra Petch, Electrolize, "Russo One";
+  border-radius: 20px;
+  font-size: 1.5em;
+  justify-self: center;
+  transition: 0.4s;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  font-size: 0.75em;
+  margin: 0.25em;
+  padding: 0.5em;
+}
+.smallButton:hover {
+  color: #ffffff;
+  background-color: #731d00;
+}
+
+.descriptionMain {
+  padding: 10px;
+}
+.descriptionMain .descriptionContainer {
+  max-width: 60%;
+  margin: 1em auto;
+}
+.descriptionMain .descriptionContainer p {
+  text-shadow: 1px 1px 2px black;
+  line-height: 2em;
+}
+.descriptionMain .descriptionContainer h2 {
+  padding: 1em 0;
+}
+.descriptionMain a button {
+  margin: 1em 1em 2em 1em;
+}
+.descriptionMain a button img {
+  display: block;
+  height: 2em;
+}
+
+@media (max-width: 1000px) {
+  .descriptionMain {
+    padding: 10px;
+  }
+  .descriptionMain .descriptionContainer {
+    max-width: 80%;
+    margin: 1em auto;
+  }
+}
+@media (max-width: 500px) {
+  .descriptionMain {
+    padding: 10px;
+  }
+  .descriptionMain .descriptionContainer {
+    max-width: 100%;
+    margin: 1em auto;
+  }
+}
+.column1 {
+  grid-column: span 1;
+}
+
+.column2 {
+  grid-column: span 2;
+}
+
+.column3 {
+  grid-column: span 3;
+}
+
+.column4 {
+  grid-column: span 4;
+}
+
+.column5 {
+  grid-column: span 5;
+}
+
+.column6 {
+  grid-column: span 6;
+}
+
+.column7 {
+  grid-column: span 7;
+}
+
+.column8 {
+  grid-column: span 8;
+}
+
+.column9 {
+  grid-column: span 9;
+}
+
+.column10 {
+  grid-column: span 10;
+}
+
+.column11 {
+  grid-column: span 11;
+}
+
+.column12 {
+  grid-column: span 12;
+}
+
+:root {
+  /* Font sizes */
+  --paragraph-font-size: 0.9vw;
+  --subtitle-font-size: 1.4vw;
+  --title-font-size: 1.8vw;
+}
+
+@media (max-width: 1400px) {
+  :root {
+    --paragraph-font-size: 1.4vw;
+    --subtitle-font-size: 1.8vw;
+    --title-font-size: 2.25vw;
+  }
+}
+@media (max-width: 800px) {
+  :root {
+    --paragraph-font-size: 14px;
+    --subtitle-font-size: 18px;
+    --title-font-size: 24px;
+  }
+}
+@media (max-width: 600px) {
+  :root {
+    --paragraph-font-size: 12px;
+    --subtitle-font-size: 16px;
+    --title-font-size: 20px;
+  }
+}
+/* Used as white text between stuff */
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 0;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #696969;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b2b2b2;
+}
+
+html {
+  font-family: "Electrolize", Chakra Petch, "Russo One";
+}
+
+body {
+  text-align: center;
+  background-attachment: fixed;
+  background-color: #000000;
+  background-position: center center;
+  margin: 0 0 0 0;
+  padding-top: 0;
+  font-family: "Electrolize", Chakra Petch, "Russo One";
+  color: #ffffff;
+}
+
+p, h3, h2, h1 {
+  margin: 0;
+  padding: 0.8em;
+}
+
+p {
+  font-family: "Electrolize", Chakra Petch, "Russo One";
+  font-size: var(--paragraph-font-size);
+}
+
+h1 {
+  font-family: "Russo One", "Electrolize", "Russo One";
+  font-size: var(--title-font-size);
+  padding: 1.4em 0.8em;
+  font-weight: normal;
+}
+
+h2 {
+  font-family: Chakra Petch, Electrolize, "Russo One";
+  font-size: var(--subtitle-font-size);
+  padding: 1em 0.8em;
+  font-weight: 500;
+}
+
+h3, h4, h5, h6 {
+  font-size: var(--paragraph-font-size);
+  padding: 1em 0.8em;
+  font-weight: normal;
+}
+
+a {
+  color: #b2b2b2;
+}
+a:link {
+  text-decoration: none;
+  color: #b2b2b2;
+}
+a:visited {
+  text-decoration: none;
+  color: #b2b2b2;
+}
+a:hover {
+  color: #ffffff;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+.indexButton {
+  margin: 10vw;
+  font-size: 4vw;
+  padding: 5vw;
+  background-color: #ec9d36;
+  color: #ffffff;
+  font-family: "Russo One", "Electrolize", "Russo One";
+  transition: 0.4s;
+}
+.indexButton:hover {
+  background-color: #731d00;
+  color: #ffffff;
+}
+
+/*===== Splat Starts ===== */
+.splatForgedBorder {
+  display: grid;
+  grid-template-columns: 1fr;
+  position: relative;
+  padding: 0;
+  justify-items: center;
+  width: 100%;
+  height: 10px;
+}
+
+.transformationReverse {
+  transform: scaleX(-1);
+}
+
+.movingBackground1 {
+  background: linear-gradient(to right, #8e0800, #ffa300, #8e0800);
+  background-size: 200%;
+  animation: gradientBar1 8s infinite linear;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+
+@keyframes gradientBar1 {
+  0% {
+    background-position: left;
+  }
+  50% {
+    background-position: right;
+    opacity: 1;
+  }
+  50.1% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.movingBackground2 {
+  background: linear-gradient(to right, #ffa300, #8e0800, #ffa300);
+  background-size: 200%;
+  animation: gradientBar2 8s infinite linear;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+}
+
+@keyframes gradientBar2 {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  50.1% {
+    background-position: left;
+    opacity: 1;
+  }
+  100% {
+    background-position: right;
+  }
+}
+/*=============== Nav Bar =============== */
+/*===== Top Navbar ===== */
+.mainTopNavContainer {
+  display: grid;
+  grid-template-columns: repeat(12, max-content);
+  grid-template-rows: minmax(10px, 1fr);
+  font-size: calc(var(--paragraph-font-size) / 1.4);
+  background-color: #000000;
+  padding: 0.15em;
+  position: relative;
+  justify-content: end;
+  place-items: center;
+  font-family: "Electrolize", Chakra Petch, "Russo One";
+}
+
+.topNavContainer {
+  padding: 0.25em 0.75em;
+}
+.topNavContainer a img {
+  transition: 0.4s;
+  height: 1.25em;
+}
+.topNavContainer a img:hover {
+  filter: brightness(2);
+}
+
+.topNavItem {
+  position: relative;
+  transition: 0.5s;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  justify-self: end;
+}
+.topNavItem:hover {
+  color: #ffffff;
+}
+
+.fab {
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  color: #b2b2b2;
+  justify-self: end;
+  transition: 0.5s;
+  font-size: var(--paragraph-font-size);
+}
+.fab:hover {
+  color: #ffffff;
+}
+
+.fa-language {
+  color: #ffffff;
+  font-size: calc(var(--paragraph-font-size) *1.5);
+  padding: 0;
+}
+
+.topNavAbsolute {
+  position: absolute;
+  z-index: 10;
+  text-align: left;
+  display: none;
+  font-size: 0.6em;
+  top: 1.5em;
+  right: 0;
+  font-family: "Russo One", "Electrolize", "Russo One";
+  font-weight: 100;
+}
+.topNavAbsolute a li {
+  padding: 20px;
+  display: block;
+  background-color: #000000;
+  transition: 0.25s;
+}
+.topNavAbsolute a li:hover {
+  color: #ffffff;
+  background-color: #696969;
+}
+
+.topNavList:hover {
+  color: #ffffff;
+  transition: 0.25s;
+  cursor: pointer;
+}
+.topNavList li {
+  color: #b2b2b2;
+}
+
+/*===== Regular navbar ===== */
+.mainNavContainer {
+  display: grid;
+  grid-template-columns: max-content minmax(50px, auto) max-content max-content;
+  grid-template-rows: auto;
+  font-size: calc(var(--paragraph-font-size));
+  background-color: #000000;
+  color: #b2b2b2;
+  font-family: "Electrolize", Chakra Petch, "Russo One";
+  justify-items: center;
+  padding: 10px;
+}
+
+.navContainer {
+  align-self: center;
+  align-content: center;
+}
+
+.navItem {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  transition: 0.25s;
+}
+
+.navLogo img {
+  width: 100px;
+  height: 100%;
+  padding: 0 20px;
+  object-fit: contain;
+  overflow: hidden;
+  justify-self: center;
+  place-self: center;
+}
+
+.navEnd {
+  justify-self: end;
+  letter-spacing: 1px;
+  transition: 0.25s;
+  margin: 0 0.5em;
+}
+
+/* This is the hover menu you see when you hover on GAME, COMMUNITY and so on */
+.navAbsolute {
+  position: absolute;
+  z-index: 10;
+  text-align: left;
+  display: none;
+  opacity: 0;
+  top: 1em;
+}
+.navAbsolute li {
+  padding: 1em;
+  display: block;
+  background-color: #262626;
+  color: #b2b2b2;
+  transition: 0.25s;
+}
+.navAbsolute li:hover {
+  color: #ffffff;
+  background-color: #3f3f3f;
+}
+
+.navAbsoluteActive {
+  display: block;
+  transition: 0.25s;
+}
+
+.navList {
+  display: inline-block;
+  margin: 0 1em;
+}
+.navList img {
+  height: 1em;
+}
+.navList h3 {
+  padding: 0;
+  font-size: 1rem;
+}
+.navList:hover {
+  color: #ffffff;
+  transition: 0.25s;
+  cursor: pointer;
+}
+.navList:hover .fa-caret-down {
+  transform: rotate(-0.25turn);
+  transition: 0.25s;
+  width: 1em;
+}
+
+.navContainer li.navList .fas {
+  width: 1em;
+}
+
+/* Mobile navbar */
+.mobileTransition {
+  display: none;
+  position: sticky;
+  grid-template-columns: auto max-content;
+  grid-template-rows: auto;
+  justify-items: left;
+  align-content: center;
+  padding: 0.5em 0.5em 0.25em 0.5em;
+  top: 0;
+  z-index: 5;
+  transition: 0.4s;
+  background-color: #262626;
+  border: 0.2em solid #000000;
+  font-size: 28px;
+}
+.mobileTransition img {
+  height: 30px;
+  width: 30px;
+}
+.mobileTransition .mobileTransitionContainer {
+  align-self: center;
+  align-content: center;
+  justify-self: center;
+}
+.mobileTransition .mobileTransitionContainer img {
+  width: 46px;
+  height: 100%;
+}
+
+.fa-caret-down {
+  transition: 0.5s;
+}
+
+.stopScroll {
+  overflow: hidden;
+}
+
+#mobileNavBar {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr;
+  grid-auto-columns: auto;
+  transition: 0.4s;
+  gap: 0;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  display: none;
+  position: sticky;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: auto;
+  z-index: 100;
+  align-items: start;
+  background-image: url("../../images/blackasf.jpg");
+  font-family: Chakra Petch, Electrolize, "Russo One";
+  font-size: 17px;
+  color: #ffffff;
+  transition: 0.5s;
+}
+#mobileNavBar .gridItem {
+  align-items: start;
+}
+#mobileNavBar .gridItem a {
+  display: inline;
+  color: #ffffff;
+}
+#mobileNavBar img {
+  height: 40px;
+  padding: 1em 0;
+  margin-left: auto;
+  margin-right: auto;
+  display: inline;
+}
+#mobileNavBar .mobileNavElement {
+  background-color: #262626;
+  border: 4px solid #000000;
+  padding: 1em;
+  text-align: left;
+  list-style: none;
+}
+#mobileNavBar .mobileNavMenuContent {
+  display: none;
+  background-color: #262626;
+  padding: 0 1em;
+}
+#mobileNavBar .mobileNavMenuContent a {
+  text-align: left;
+  display: block;
+  color: #b2b2b2;
+  padding: 0.7em;
+}
+#mobileNavBar .mobileSocialMedia {
+  padding: 0.2em 0;
+}
+#mobileNavBar .mobileSocialMedia a {
+  padding: 0;
+}
+#mobileNavBar .mobileSocialMedia a img {
+  display: inline;
+  padding: 0 0.5em;
+  width: 24px;
+  color: #ffffff;
+}
+#mobileNavBar #closeMenu {
+  font-size: 30px;
+  color: #ffffff;
+  z-index: 100;
+  position: absolute;
+  opacity: 0.8;
+  top: 0;
+  right: 25px;
+  width: 30px;
+}
+#mobileNavBar #returnMenu {
+  display: none;
+  font-size: 30px;
+  color: #ffffff;
+  z-index: 100;
+  position: absolute;
+  opacity: 0.8;
+  top: 0;
+  left: 25px;
+  width: 30px;
+  transform: rotate(90deg);
+}
+
+.absoluteBottom {
+  position: absolute;
+  bottom: 0;
+}
+
+.mobileCaretActive {
+  transform: rotate(-0.25turn);
+  transition: 0.5s;
+}
+
+.mobileOtherLinks a {
+  padding: 0 1em;
+  font-size: 14px;
+}
+
+.mainFooterContainer {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr;
+  grid-auto-columns: auto;
+  transition: 0.4s;
+  gap: 0;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  color: #b2b2b2;
+  background-image: url("../../images/black1.jpg");
+  background-position: center;
+  background-size: cover;
+  padding: 4em 2em;
+  justify-content: center;
+  text-align: center;
+}
+
+.footerItem {
+  transition: 0.4s;
+  line-height: 2.2em;
+  font-family: Chakra Petch, Electrolize, "Russo One";
+}
+.footerItem h1 {
+  color: #ffffff;
+  padding: 0.25em;
+  font-size: var(--subtitle-font-size);
+}
+.footerItem img {
+  width: 150px;
+}
+.footerItem ul {
+  font-size: var(--paragraph-font-size);
+  color: #ffffff;
+  padding: 1em;
+  display: inline-block;
+}
+.footerItem li {
+  list-style-type: none;
+  padding: 1em 0.5em 0 0.5em;
+  font-size: 0.8em;
+  font-family: "Electrolize", Chakra Petch, "Russo One";
+}
+.footerItem a {
+  color: #b2b2b2;
+}
+.footerItem a:hover {
+  color: #ffffff;
+  transition: 0.4s;
+}
+
+.navContainer .loginItem {
+  position: relative;
+  padding: 0 4em;
+}
+.navContainer .loginItem li {
+  list-style: none;
+  padding: 0em;
+  font-size: 16px;
+  transition: 0.4s;
+}
+.navContainer .loginItem #loginList {
+  position: relative;
+}
+.navContainer .loginItem #loginAbsolute {
+  width: 90%;
+  border-radius: 20px;
+  padding: 0.5em;
+  display: none;
+  z-index: 200;
+  background-color: #262626;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  opacity: 1;
+}
+.navContainer .loginItem #loginAbsolute .loginDropdown {
+  padding: 0;
+  display: block;
+  opacity: 1;
+}
+.navContainer .loginItem #loginAbsolute .loginDropdown li {
+  padding: 1em;
+  font-size: 1rem;
+  background-color: #262626;
+  transition: 0.4s;
+}
+.navContainer .loginItem #loginAbsolute .loginDropdown a:hover li {
+  background-color: #3f3f3f;
+  color: #ffffff;
+}
+
+@media (min-width: 1201px) {
+  .mobileTransition {
+    display: none;
+  }
+}
+@media (max-width: 1200px) {
+  .mainNavContainer, .mainTopNavContainer {
+    display: none;
+  }
+
+  .mobileTransition {
+    display: grid;
+  }
+}
+@media (max-width: 800px) {
+  .mainTopNavContainer {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
+@media (max-width: 1100px) {
+  .mobileNavSticky {
+    display: block;
+  }
+}
+@media (max-width: 1100px) {
+  .mainNavContainer, .mainTopNavContainer {
+    display: none;
+  }
+}
+.passResetEmail {
+  padding: 1em 2em;
+}
+
+.accountForm {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr;
+  grid-auto-columns: auto;
+  transition: 0.4s;
+  gap: 0;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  padding: 0vw;
+  gap: 0;
+}
+
+form {
+  align-self: center;
+}
+form p {
+  font-size: calc(var(--paragraph-font-size)*1);
+  padding: 0.1em;
+}
+form .formStart {
+  display: inline-block;
+}
+form .formStart p {
+  font-size: 16px;
+}
+form .formStart input {
+  min-width: 300px;
+  margin: 0.1em;
+  border: 0.2em solid #000000;
+}
+form .formStart .formHelp {
+  display: inline;
+}
+form .formStart .formHelp ul {
+  padding: 0.5em 0;
+  font-weight: bold;
+  font-family: "Electrolize", Chakra Petch, "Russo One";
+}
+form .formStart .formHelp ul li {
+  list-style: none;
+  font-weight: normal;
+  line-height: 1.25em;
+}
+
+.formGroup p {
+  padding: 0.2em;
+}
+
+.formContainer {
+  padding: 1em 0;
+  text-align: center;
+  display: inline-block;
+}
+
+.form-group {
+  padding: 2em 1em;
+}
+.form-group textarea {
+  min-width: 500px;
+}
+
+.form-control {
+  width: 300px;
+}
+
+.tosAgree label {
+  display: block;
+}
+.tosAgree input {
+  display: inline-block;
+}
+
+.alert {
+  border-radius: 20px;
+  display: inline-block;
+  padding: 1em 2em;
+  margin: 1em 5vw;
+  list-style: none;
+}
+.alert li {
+  list-style: none;
+}
+
+.alert-invite {
+  background-color: #49411f;
+}
+.alert-invite a:hover {
+  color: #ec9d36;
+  text-decoration: underline #ec9d36;
+  transition: 0.4s;
+}
+
+.alert-danger {
+  background-color: #491f1f;
+}
+
+.alert-success {
+  background-color: #28491f;
+}
+
+.recaptchaForm {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr;
+  grid-auto-columns: auto;
+  transition: 0.4s;
+  gap: 0;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  padding: 2em;
+}
+.recaptchaForm label {
+  justify-self: center;
+  align-self: center;
+}
+.recaptchaForm label .g-recaptcha {
+  display: inline-block;
+}
+
+.container {
+  background-color: rgba(0, 0, 0, 0.8);
+  margin: 2vw 5vw;
+  padding: 2em 4vw;
+  border-radius: 20px;
+  text-align: left;
+}
+.container .markdownButton a {
+  display: inline-block;
+  margin: 1em;
+}
+.container .markdownButton a button {
+  margin: 0;
+}
+.container a {
+  color: #ec9d36;
+  text-decoration: underline #ec9d36;
+  transition: 0.4s;
+}
+.container a:hover {
+  color: #731d00;
+  text-decoration: underline #731d00;
+}
+.container h2 {
+  padding: 1em;
+}
+.container li {
+  padding: 0.5em;
+  font-size: 1em;
+}
+
+.containerCenter {
+  background-color: rgba(0, 0, 0, 0.8);
+  margin: 2vw 5vw;
+  padding: 2em 4vw;
+  border-radius: 20px;
+  text-align: center;
+}
+.containerCenter .markdownButton a {
+  display: inline-block;
+  margin: 1em;
+}
+.containerCenter .markdownButton a button {
+  margin: 0;
+}
+.containerCenter a {
+  color: #ec9d36;
+  text-decoration: underline #ec9d36;
+  transition: 0.4s;
+}
+.containerCenter a:hover {
+  color: #731d00;
+  text-decoration: underline #731d00;
+}
+.containerCenter h2 {
+  padding: 0.25em 0;
+}
+.containerCenter li {
+  padding: 0.5em;
+  font-size: 1em;
+}
+
+.centerFormPlease {
+  text-align: center;
+}
+.centerFormPlease table {
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+}
+.centerFormPlease table thead, .centerFormPlease table tr, .centerFormPlease table th {
+  text-align: center;
+}
+.centerFormPlease table th {
+  padding: 1.5em;
+}
+
+@media (max-width: 600px) {
+  .accountForm .column6 {
+    grid-column: span 12;
+  }
+  .accountForm .column12 .centerFormPlease th, .accountForm .column12 .centerFormPlease tr {
+    padding: 0.1em;
+  }
+  .accountForm .formGroup, .accountForm .form-group, .accountForm h2, .accountForm h3 {
+    padding: 0.1em;
+  }
+
+  form .formStart {
+    min-width: 100px;
+  }
+  form .formStart input {
+    min-width: 100px;
+  }
+  form .form-control {
+    width: initial;
+  }
+
+  .containerCenter {
+    padding: 0.25em;
+    margin: 0;
+  }
+}
+p {
+  font-family: "Electrolize", Chakra Petch, "Russo One";
+  font-size: var(--paragraph-font-size);
+  line-height: 1.5em;
+}
+
+h1 {
+  font-family: "Russo One", "Electrolize", "Russo One";
+  font-size: var(--title-font-size);
+  padding: 0.25em;
+}
+
+h2 {
+  font-family: Chakra Petch, Electrolize, "Russo One";
+  font-size: var(--subtitle-font-size);
+  padding: 0.25em;
+}
+
+.mainBannerContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  background-position: center;
+  background-size: cover;
+  padding: 9.5% 0;
+  letter-spacing: 1.2PX;
+  text-shadow: 0 0 7.5px black, 0 0 7.5px black;
+}
+
+.bannerTitle {
+  font-size: var(--subtitle-font-size);
+  font-family: Chakra Petch, Electrolize, "Russo One";
+  font-weight: bolder;
+  letter-spacing: 6px;
+  padding: 0.5em 0;
+}
+
+.bannerSubtitle {
+  font-size: var(--paragraph-font-size);
+  font-family: "Electrolize", Chakra Petch, "Russo One";
+  font-weight: 600;
+  padding: 0.25em 0;
+}
+
+.mainIntroduction {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr;
+  grid-auto-columns: auto;
+  transition: 0.4s;
+  gap: 0;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  background-image: url("../../images/blackbg.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 8em;
+}
+.mainIntroduction p {
+  padding: 1em 5em;
+  line-height: 2em;
+}
+
+/* Separating  banner with highlight gold */
+.highlightText {
+  color: #ec9d36;
+}
+
+.showcaseBackground {
+  padding: 1vw 0 4vw 0;
+}
+
+.mainShowcaseReverse {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr;
+  grid-auto-columns: auto;
+  transition: 0.4s;
+  gap: 0;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  margin: 6vw 20vw 0 2vw;
+}
+
+.mainShowcase {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr;
+  grid-auto-columns: auto;
+  transition: 0.4s;
+  gap: 0;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  margin: 6vw 2vw 0 20vw;
+}
+
+.showcaseContainer {
+  font-family: "Electrolize", Chakra Petch, "Russo One";
+  background-color: #262626;
+  text-align: left;
+  padding: 2em;
+  opacity: 0.9;
+}
+.showcaseContainer h2 {
+  padding: 0.2em 10px;
+}
+.showcaseContainer h1 {
+  padding: 0.2em 10px;
+}
+.showcaseContainer p {
+  font-size: var(--paragraph-font-size);
+  line-height: 2em;
+  margin: 0;
+  padding: 0.2em 10px;
+}
+
+.showcaseImage {
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  min-width: 200px;
+  min-height: 200px;
+}
+
+.campaignBG {
+  background-image: url("../../images/coop.jpg");
+}
+
+.communityBG {
+  background-image: url("../../images/community.jpg");
+}
+
+.strategicBG {
+  background-image: url("../../images/strategic.jpg");
+}
+
+.destructionBG {
+  background-image: url("../../images/destruction.jpg");
+}
+
+/* Here you can find stuff related to splitImage containers but in regards to the factions */
+.factionMainContainer {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr;
+  grid-auto-columns: auto;
+  transition: 0.4s;
+  gap: 0;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  padding: 0 6vw 4vw 6vw;
+  background-image: url("/../../images/black0.jpg");
+}
+.factionMainContainer .factionTitle {
+  padding: 2em;
+}
+
+.factionContainer {
+  height: 100%;
+  margin: 1.5vw;
+  transition: 0.4s;
+}
+.factionContainer:hover {
+  filter: brightness(1.2);
+}
+.factionContainer h1 {
+  padding: 0.5em 0.25em;
+}
+.factionContainer p {
+  padding: 0.25em;
+  line-height: 1.5em;
+}
+.factionContainer button {
+  margin: 0;
+}
+.factionContainer img {
+  width: 50%;
+  height: 50%;
+  transition: 0.4s;
+}
+
+.UEF {
+  background-color: #13152c;
+  border: 0.25em solid #3233db;
+  outline: 1em solid #13152c;
+}
+.UEF button {
+  background-color: #3233db;
+}
+.UEF img {
+  background-color: #1f2349;
+  padding: 0 25%;
+}
+
+.Cybran {
+  background-color: #2c1313;
+  border: 0.25em solid #db3232;
+  outline: 1em solid #2c1313;
+}
+.Cybran button {
+  background-color: #db3232;
+}
+.Cybran img {
+  background-color: #491f1f;
+  padding: 0 25%;
+}
+
+.Aeon {
+  background-color: #182c13;
+  border: 0.25em solid #52db32;
+  outline: 1em solid #182c13;
+}
+.Aeon button {
+  background-color: #52db32;
+}
+.Aeon img {
+  background-color: #28491f;
+  width: 40%;
+  padding: 0 30%;
+}
+
+.Seraphim {
+  background-color: #2c2713;
+  border: 0.25em solid #dbb932;
+  outline: 1em solid #2c2713;
+}
+.Seraphim button {
+  background-color: #dbb932;
+}
+.Seraphim img {
+  background-color: #49411f;
+  padding: 0 25%;
+}
+
+/* Media Changes */
+@media (max-width: 1400px) {
+  .factionMainContainer .column3 {
+    grid-column: span 6;
+  }
+  .factionMainContainer .factionContainer {
+    height: 80%;
+    margin: 1vw;
+  }
+}
+@media (max-width: 800px) {
+  .mainShowcase, .mainShowcaseReverse {
+    margin: 20px;
+  }
+  .mainShowcase .column6, .mainShowcaseReverse .column6 {
+    grid-column: span 12;
+  }
+
+  .showcaseContainer {
+    padding: 5px;
+  }
+  .showcaseContainer .showcaseSubTitle, .showcaseContainer .showcaseTitle, .showcaseContainer p {
+    padding: 0.5em;
+  }
+
+  .factionMainContainer .column3 {
+    grid-column: span 12;
+  }
+  .factionMainContainer .factionContainer {
+    height: 80%;
+    margin: 0;
+  }
+
+  .bannerSubtitle {
+    font-size: 12px;
+    padding: 5px;
+  }
+
+  .bannerTitle {
+    font-size: 20px;
+    padding: 5px;
+  }
+
+  .factionMainContainer .factionContainer {
+    height: 90%;
+    margin: 10vw 0;
+  }
+
+  .mainIntroduction {
+    padding: 2em;
+  }
+  .mainIntroduction p {
+    padding: 1em;
+  }
+}
+.endBanner {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr;
+  grid-auto-columns: auto;
+  transition: 0.4s;
+  gap: 0;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  padding: 10vw 5vw;
+  background-image: url("/../../images/bannerFooter.webp");
+  background-size: cover;
+  background-position: center;
+  text-align: left;
+}
+.endBanner:after {
+  background-color: black;
+}
+.endBanner .bannerContainer {
+  padding: 1em;
+}
+.endBanner h1, .endBanner h2 {
+  text-shadow: 0 2px 4px black, 0 8px 16px black;
+}
+.endBanner a {
+  display: inline-block;
+}
+
+/*# sourceMappingURL=index.css.map */
+#articleStart {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr;
+  grid-auto-columns: auto;
+  transition: 0.4s;
+  gap: 0;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  gap: 25px;
+  background-image: url("../../images/factionpattern.jpg");
+  padding: 2vw 7vw;
+  text-align: left;
+}
+#articleStart .articleTopTitle {
+  text-align: center;
+  letter-spacing: 0.25em;
+}
+
+#articleMain {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr;
+  grid-auto-columns: auto;
+  transition: 0.4s;
+  gap: 0;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  gap: 25px;
+  padding: 1vw;
+}
+#articleMain .articleContainer {
+  height: 100%;
+  background-color: #262626;
+  border: 0.25em solid #731d00;
+  transition: 0.4s;
+}
+#articleMain .articleContainer:hover {
+  filter: brightness(1.2) contrast(1.05);
+  background-color: #000000;
+}
+#articleMain .articleContainer .articleImage {
+  cursor: pointer;
+  background-image: url("/../../images/coop.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 8vw;
+}
+#articleMain .articleContainer .articleText {
+  padding: 0.5em;
+}
+#articleMain .articleContainer .articleText p {
+  padding: 0.25em;
+}
+#articleMain .articleContainer .articleText h2, #articleMain .articleContainer .articleText p {
+  font-size: 18px;
+}
+#articleMain .articleContainer .articleText h1 {
+  font-size: 30px;
+}
+#articleMain .articleContainer .articleText button {
+  font-size: 14px;
+  padding: 0.5em;
+}
+
+@media (max-width: 1200px) {
+  #articleStart {
+    padding: 4vw;
+  }
+
+  #articleMain {
+    gap: 20px;
+  }
+  #articleMain .column8 {
+    grid-column: span 4;
+  }
+}
+@media (max-width: 800px) {
+  #articleMain {
+    gap: 20px;
+  }
+  #articleMain .column4, #articleMain .column8 {
+    grid-column: span 6;
+  }
+  #articleMain .articleContainer .articleText {
+    padding: 0.5em;
+  }
+  #articleMain .articleContainer .articleText p {
+    padding: 0.25em;
+  }
+  #articleMain .articleContainer .articleText h2, #articleMain .articleContainer .articleText p {
+    font-size: 12px;
+  }
+  #articleMain .articleContainer .articleText h1 {
+    font-size: 18px;
+  }
+  #articleMain .articleContainer .articleText button {
+    font-size: 12px;
+    padding: 0.5em;
+  }
+  #articleMain .articleContainer .articleImage {
+    padding: 14vw;
+  }
+}
+@media (max-width: 500px) {
+  #articleMain {
+    gap: 20px;
+  }
+  #articleMain .column4, #articleMain .column8, #articleMain .column6 {
+    grid-column: span 12;
+  }
+  #articleMain .articleContainer .articleImage {
+    padding: 20vw;
+  }
+}
+.newsAbsolute {
+  width: 150px;
+  height: 0px;
+  position: sticky;
+  top: 150px;
+  right: 10px;
+  z-index: 100;
+}
+.newsAbsolute a button {
+  font-size: 14px;
+  padding: 0.5em;
+}
+
+#newsBackground {
+  background-image: url("../../images/blackasf.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  padding: 5vw 10vw;
+}
+
+#newsMain {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr;
+  grid-auto-columns: auto;
+  transition: 0.4s;
+  gap: 0;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 1;
+  border-radius: 20px;
+  line-height: 2em;
+  text-align: left;
+}
+#newsMain .newsContainer {
+  padding: 1em;
+  display: inline-block;
+}
+#newsMain .newsContainer a {
+  color: #ec9d36;
+  text-decoration: underline #ec9d36;
+  transition: 0.4s;
+}
+#newsMain .newsContainer a:hover {
+  color: #731d00;
+  text-decoration: underline #731d00;
+}
+#newsMain .newsContainer h2 {
+  padding: 1.5em 0.8em;
+}
+#newsMain .newsContainer h3, #newsMain .newsContainer h4, #newsMain .newsContainer h5 {
+  font-family: Chakra Petch, Electrolize, "Russo One";
+  font-size: calc(var(--paragraph-font-size)*1.2);
+  padding: 1em 0.8em;
+  margin: 0;
+}
+#newsMain .newsContainer img {
+  width: 70%;
+  height: 70%;
+  border-radius: 20px;
+}
+#newsMain .newsContainer figcaption {
+  font-family: "Electrolize", Chakra Petch, "Russo One";
+  font-size: var(--paragraph-font-size);
+}
+#newsMain .newsContainer li {
+  list-style: none;
+  font-size: var(--paragraph-font-size);
+  font-family: "Electrolize", Chakra Petch, "Russo One";
+  padding: 0.5em 3em;
+}
+#newsMain .newsContainer .wp-block-preformatted {
+  font-size: var(--paragraph-font-size);
+  text-transform: uppercase;
+  font-family: "Electrolize", Chakra Petch, "Russo One";
+  padding: 1em 2em;
+  line-height: 1.5em;
+}
+
+@media (max-width: 1200px) {
+  #newsBackground {
+    padding: 2vw 4vw;
+  }
+
+  .newsAbsolute {
+    width: 100px;
+    top: 150px;
+  }
+  .newsAbsolute a button {
+    font-size: 12px;
+  }
+}
+@media (max-width: 800px) {
+  #newsBackground {
+    padding: 1vw 2vw;
+  }
+
+  .newsAbsolute {
+    width: 100px;
+    top: 150px;
+  }
+  .newsAbsolute a button {
+    font-size: 10px;
+  }
+}
+body {
+  background-image: url("../../images/newshub.jpg");
+  background-size: cover;
+}
+
+.clientBackground {
+  text-align: left;
+  padding: 30px 50px;
+}
+.clientBackground p, .clientBackground h3, .clientBackground h2, .clientBackground h1 {
+  font-family: "Electrolize", Chakra Petch, "Russo One";
+  margin: 0;
+  padding: 0.8em;
+}
+.clientBackground p {
+  font-family: "Electrolize", Chakra Petch, "Russo One";
+  font-size: var(--paragraph-font-size);
+}
+.clientBackground h1 {
+  font-family: "Russo One", "Electrolize", "Russo One";
+  font-size: var(--title-font-size);
+  padding: 1.4em 0.8em;
+}
+.clientBackground h2 {
+  font-family: Chakra Petch, Electrolize, "Russo One";
+  font-size: var(--subtitle-font-size);
+  padding: 1em 0.8em;
+}
+.clientBackground h3, .clientBackground h4 {
+  font-family: Chakra Petch, Electrolize, "Russo One";
+  font-size: calc(var(--paragraph-font-size)*1.2);
+  padding: 1em 0.8em;
+}
+.clientBackground a:link {
+  text-align: center;
+  text-decoration: none;
+  color: #b2b2b2;
+  transition: 0.5s;
+}
+.clientBackground:visited {
+  text-decoration: none;
+  color: #b2b2b2;
+}
+.clientBackground:hover {
+  color: #ffffff;
+}
+
+.clientMainFeature {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr;
+  grid-auto-columns: auto;
+  transition: 0.4s;
+  gap: 0;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  grid-template-rows: 15vw;
+  text-align: left;
+  margin: 20px 0;
+  gap: 20px 20px;
+}
+.clientMainFeature .featureSubGrid {
+  color: #ffffff;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr;
+  grid-auto-columns: auto;
+  transition: 0.4s;
+  gap: 0;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  height: 100%;
+  background-color: #262626;
+}
+.clientMainFeature .featureSubGrid:hover {
+  background-color: #000000;
+}
+
+.featureContainer {
+  text-align: left;
+  transition: 0.4s;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.featureContainer .featureImage {
+  background-size: cover;
+  background-position: center;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+.featureContainer .featureText {
+  padding: 1em;
+}
+.featureContainer .featureText p {
+  font-size: 0.9vw;
+  display: inline-block;
+  color: #b2b2b2;
+}
+.featureContainer .featureText h1 {
+  color: #ffffff;
+  font-size: 1.1vw;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 0.25em;
+}
+
+.featureSocial {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr;
+  grid-auto-columns: auto;
+  transition: 0.4s;
+  gap: 0;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  grid-template-rows: 1fr;
+  transition: 0.4s;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.featureSocial .featureDiscord {
+  background-color: #151d48;
+}
+.featureSocial .featureDiscord:hover {
+  background-color: #000c3c;
+}
+.featureSocial .featureTwitch {
+  background-color: #291548;
+}
+.featureSocial .featureTwitch:hover {
+  background-color: #24003c;
+}
+.featureSocial .featureYoutube {
+  background-color: #481515;
+}
+.featureSocial .featureYoutube:hover {
+  background-color: #3c0000;
+}
+.featureSocial .featureLink {
+  display: inline-block;
+  transition: 0.4s;
+  height: 100%;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+}
+.featureSocial .featureLink a {
+  text-align: center;
+  position: absolute;
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding: 1em 0;
+  color: #ffffff;
+  font-size: 1vw;
+  font-family: "Russo One", "Electrolize", "Russo One";
+  box-sizing: inherit;
+  text-decoration: none;
+}
+.featureSocial .featureLink img {
+  color: #ffffff;
+  position: absolute;
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: 2em;
+  padding: 0;
+}
+.featureSocial .clientSupportFAF {
+  background-color: #262626;
+  text-align: center;
+  transition: 0.4s;
+}
+.featureSocial .clientSupportFAF:hover {
+  background-color: #000000;
+}
+.featureSocial .clientSupportFAF a {
+  color: white;
+}
+.featureSocial .clientSupportFAF a h1 {
+  font-size: 2vw;
+  padding: 0.5em;
+}
+.featureSocial .clientSupportFAF a img {
+  height: 1.25em;
+  padding: 0.25em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.featureSocial .clientSupportFAF a h2 {
+  font-size: 1.4vw;
+  padding: 0.5em;
+  transition: 0.4s;
+  color: #ffffff;
+  background-color: #3f3f3f;
+}
+.featureSocial .clientSupportFAF a h2:hover {
+  background-color: #ec9d36;
+  color: #000000;
+}
+
+.clientContainer {
+  height: 100%;
+}
+.clientContainer .clientNewsRequest {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr;
+  grid-auto-columns: auto;
+  transition: 0.4s;
+  gap: 0;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+  background-color: #262626;
+  transition: 0.4s;
+  color: #696969;
+}
+.clientContainer .clientNewsRequest:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+#clientMain {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr;
+  grid-auto-columns: auto;
+  transition: 0.4s;
+  gap: 0;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  grid-template-columns: repeat(10, 15vw);
+  overflow: hidden;
+  text-align: left;
+  padding: 0 20px;
+  margin: 2vw 0;
+}
+
+#clientSpawn {
+  padding: 0 25px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr;
+  grid-auto-columns: auto;
+  transition: 0.4s;
+  gap: 0;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  grid-template-columns: repeat(10, 16vw);
+  overflow: visible;
+  gap: 0 25px;
+  text-align: left;
+  height: 100%;
+}
+#clientSpawn a {
+  height: 100%;
+}
+#clientSpawn a .clientContainer {
+  text-align: left;
+  height: 100%;
+  background-color: #262626;
+  color: #ffffff;
+  transition: 0.4s;
+}
+#clientSpawn a .clientContainer:hover {
+  background-color: #000000;
+}
+#clientSpawn a .clientContainer .clientImage {
+  background-image: url("/../../images/coop.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 5vw;
+}
+#clientSpawn a .clientContainer .clientText {
+  padding: 0.5em 0.5em 0 0.5em;
+}
+#clientSpawn a .clientContainer .clientText p {
+  color: #b2b2b2;
+  font-size: 14px;
+  padding: 0.5em;
+}
+#clientSpawn a .clientContainer .clientText h1 {
+  color: #ffffff;
+  font-size: 16px;
+  padding: 0.25em 0.25em 0 0.25em;
+}
+
+#clientArrowRigth {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr;
+  grid-auto-columns: auto;
+  transition: 0.4s;
+  gap: 0;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  grid-template-columns: 1.5em;
+  background-color: #3f3f3f;
+  color: #000000;
+  height: 100%;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  text-align: center;
+  font-size: 25px;
+  right: 0;
+}
+#clientArrowRigth:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+#clientArrowLeft {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr;
+  grid-auto-columns: auto;
+  transition: 0.4s;
+  gap: 0;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  grid-template-columns: 1.5em;
+  background-color: #3f3f3f;
+  color: #000000;
+  height: 100%;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  text-align: center;
+  font-size: 25px;
+  left: 0;
+}
+#clientArrowLeft:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.clientMenu {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr;
+  grid-auto-columns: auto;
+  transition: 0.4s;
+  gap: 0;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  padding: 0;
+  gap: 20px 0;
+}
+.clientMenu .clientMenuContainer {
+  margin: 0 2em 0 0;
+  background-color: #3f3f3f;
+  height: 100%;
+}
+.clientMenu .clientMenuContainer ul {
+  text-align: center;
+  display: block;
+  color: #ffffff;
+  font-family: "Russo One", "Electrolize", "Russo One";
+  font-size: 1.2em;
+  padding: 0.8em;
+  margin: 0;
+  background-color: #262626;
+}
+.clientMenu .clientMenuContainer a {
+  font-family: "Electrolize", Chakra Petch, "Russo One";
+  display: block;
+  padding: 0.8em 0.5em;
+  background-color: #3f3f3f;
+  color: #b2b2b2;
+  transition: 0.4s;
+}
+.clientMenu .clientMenuContainer a:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+.clientMenu .clientTournament h2 {
+  font-size: 16px;
+  display: inline-block;
+  padding: 0.5em;
+}
+.clientMenu .clientTournament p {
+  display: block;
+  font-size: 14px;
+  padding: 0.5em;
+}
+.clientMenu #tournamentSpawn {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr;
+  grid-auto-columns: auto;
+  transition: 0.4s;
+  gap: 0;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+}
+.clientMenu #tournamentSpawn ul {
+  padding: 1em;
+}
+.clientMenu #tournamentSpawn a {
+  border: 0.2em solid #262626;
+  border-top: 0 solid white;
+  width: 100%;
+  padding: 0em;
+  height: 100%;
+  display: inline-block;
+  margin: 0;
+}
+.clientMenu #tournamentSpawn a h2 {
+  font-size: 16px;
+  display: inline-block;
+  padding: 0.5em;
+}
+.clientMenu #tournamentSpawn a p {
+  display: block;
+  font-size: 14px;
+  padding: 0.5em;
+}
+.clientMenu .clientMenuSubgrid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr;
+  grid-auto-columns: auto;
+  transition: 0.4s;
+  gap: 0;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  height: 100%;
+  background-color: #3f3f3f;
+}
+.clientMenu .clientMenuSubgrid .clientSupportFAF {
+  height: 100%;
+  background-color: #262626;
+  text-align: center;
+  padding: 0.8em;
+  transition: 0.4s;
+}
+.clientMenu .clientMenuSubgrid .clientSupportFAF:hover {
+  background-color: #000000;
+}
+.clientMenu .clientMenuSubgrid .clientSupportFAF a {
+  color: white;
+}
+.clientMenu .clientMenuSubgrid .clientSupportFAF p {
+  padding: 0.25em;
+  font-size: 14px;
+}
+.clientMenu .clientMenuSubgrid .clientSupportFAF h1 {
+  font-size: 25px;
+  padding: 1em;
+  color: #ffffff;
+  margin: auto;
+}
+.clientMenu .clientMenuSubgrid .clientSupportFAF img {
+  height: 1.25em;
+  padding: 0.25em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.clientMenu .clientMenuSubgrid .clientSupportFAF h2 {
+  font-size: 18px;
+  padding: 0.25em;
+  transition: 0.4s;
+  color: #ffffff;
+}
+
+@media (max-width: 1400px) {
+  #clientArrowLeft, #clientArrowRigth {
+    grid-template-columns: 1.25em;
+  }
+
+  #clientSpawn {
+    grid-template-columns: repeat(10, 23vw);
+  }
+  #clientSpawn a .clientContainer .clientText {
+    padding: 0.25em;
+  }
+  #clientSpawn a .clientContainer .clientText p {
+    font-size: 12px;
+    padding: 0.5em;
+  }
+  #clientSpawn a .clientContainer .clientText h1 {
+    font-size: 14px;
+    padding: 0.25em 0.25em 0 0.25em;
+  }
+  #clientSpawn a .clientContainer .clientImage {
+    padding: 7vw;
+  }
+
+  .clientMainFeature {
+    grid-template-rows: 25vw;
+  }
+  .clientMainFeature .featureContainer .featureText {
+    padding: 1em;
+  }
+  .clientMainFeature .featureContainer .featureText p {
+    font-size: 16px;
+  }
+  .clientMainFeature .featureContainer .featureText h1 {
+    font-size: 20px;
+    padding: 0 0.25em;
+  }
+  .clientMainFeature .featureSocial .featureLink a {
+    font-size: 12px;
+  }
+
+  .clientMenu .clientMenuSubgrid .clientSupportFAF a h1 {
+    font-size: 28px;
+  }
+  .clientMenu .clientMenuSubgrid h2 {
+    font-size: 18px;
+  }
+  .clientMenu .clientMenuContainer ul {
+    font-size: 14px;
+  }
+  .clientMenu .clientMenuContainer a {
+    font-size: 12px;
+  }
+}
+@media (max-width: 1000px) {
+  #clientSpawn {
+    grid-template-columns: repeat(10, 30vw);
+  }
+  #clientSpawn a .clientContainer .clientImage {
+    padding: 10vw;
+  }
+
+  .clientMainFeature .featureContainer .featureText p {
+    font-size: 14px;
+  }
+  .clientMainFeature .featureContainer .featureText h1 {
+    font-size: 18px;
+    padding: 0 0.25em;
+  }
+  .clientMainFeature .featureSocial .featureLink {
+    padding: 1em;
+  }
+
+  .clientMenu .clientMenuSubgrid .clientSupportFAF {
+    padding: 0.25em;
+  }
+  .clientMenu .clientMenuSubgrid .clientSupportFAF a h1 {
+    font-size: 20px;
+    padding: 0.5em;
+  }
+  .clientMenu .clientMenuSubgrid .clientSupportFAF a h1 img {
+    width: 75px;
+  }
+  .clientMenu .clientMenuSubgrid h2 {
+    font-size: 16px;
+    padding: 0.75em;
+  }
+  .clientMenu .clientMenuContainer {
+    margin: 0 1em 0 0;
+  }
+  .clientMenu .clientMenuContainer ul {
+    font-size: 12px;
+  }
+  .clientMenu .clientMenuContainer a {
+    font-size: 12px;
+  }
+}
+@media (max-width: 875px) {
+  .clientMainFeature {
+    grid-template-rows: 35vw;
+  }
+  .clientMainFeature .column9, .clientMainFeature .column3 {
+    grid-column: span 12;
+  }
+  .clientMainFeature .featureContainer .featureText {
+    padding: 1em;
+  }
+  .clientMainFeature .featureContainer .featureText p {
+    font-size: 12px;
+  }
+  .clientMainFeature .featureContainer .featureText h1 {
+    font-size: 14px;
+    padding: 0 0.25em;
+  }
+  .clientMainFeature .featureSocial .featureLink a {
+    font-size: 10px;
+  }
+  .clientMainFeature .featureSocial .clientSupportFAF h1 {
+    font-size: 18px;
+  }
+  .clientMainFeature .featureSocial .clientSupportFAF h2 {
+    font-size: 14px;
+  }
+
+  .clientMenu .column6, .clientMenu .column2 {
+    grid-column: span 6;
+    margin: 1em;
+  }
+
+  #clientSpawn {
+    grid-template-columns: repeat(10, 40vw);
+  }
+  #clientSpawn a .clientContainer .clientImage {
+    padding: 12vw;
+  }
+
+  #clientArrowLeft, #clientArrowRigth {
+    grid-template-columns: 1.25em;
+  }
+
+  .clientMenu .clientMenuSubgrid {
+    height: auto;
+  }
+  .clientMenu .clientMenuSubgrid .clientSupportFAF {
+    padding: 0.25em;
+    margin: 0;
+  }
+  .clientMenu .clientMenuSubgrid .clientSupportFAF a h1 {
+    font-size: 20px;
+    padding: 0.75em;
+  }
+  .clientMenu .clientMenuSubgrid h2 {
+    font-size: 14px;
+    padding: 0.75em;
+  }
+
+  #tournamentSpawn .column6 {
+    grid-column: span 12;
+  }
+  #tournamentSpawn a h2 {
+    font-size: 14px;
+  }
+  #tournamentSpawn a p {
+    font-size: 12px;
+  }
+}
+@media (max-width: 500px) {
+  .clientMainFeature .featureSocial .featureLink a {
+    font-size: 8px;
+  }
+}
+.playMain {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr;
+  grid-auto-columns: auto;
+  transition: 0.4s;
+  gap: 0;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  gap: 1em 0;
+  margin: 2vw 4vw;
+  padding: 1em;
+  border-radius: 20px;
+}
+.playMain .playInnerGrid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr;
+  grid-auto-columns: auto;
+  transition: 0.4s;
+  gap: 0;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  grid-template-columns: 1fr;
+  margin: 0 auto;
+  gap: 3em 0;
+}
+.playMain .playInnerGrid .playContainer {
+  padding: 1em 0;
+  width: 100%;
+  border-radius: 20px;
+  text-align: center;
+  background-color: #262626;
+}
+.playMain .playInnerGrid .playContainer img {
+  width: 40%;
+  height: 100%;
+}
+.playMain .playInnerGrid .playContainer label {
+  margin: 0;
+  font-size: 18px;
+}
+.playMain .playInnerGrid .playContainer input {
+  margin: 1em 0.5em;
+  width: 0.75em;
+  height: 0.75em;
+}
+.playMain .playInnerGrid .playContainer a {
+  display: inline-block;
+  margin: 0.25em auto;
+}
+.playMain .playInnerGrid .playContainer a button {
+  font-size: 1em;
+  text-align: center;
+  display: block;
+}
+.playMain .playInnerGrid .playContainer h2 {
+  padding: 1em;
+  font-weight: 600;
+}
+.playMain .playInnerGrid .playContainer h2 p {
+  font-weight: normal;
+}
+.playMain .playInnerGrid .playCheckboxContainer {
+  padding: 0 0.25em;
+  text-align: left;
+  display: inline-block;
+}
+.playMain .playInnerGrid .playCheckboxContainer img {
+  width: 75%;
+}
+.playMain .playInnerGrid .playCheckboxContainer .gogSmallerImage img {
+  width: 30%;
+}
+.playMain .playInnerGrid .playCheckboxContainer .gogSmallerImage2 img {
+  width: 45%;
+}
+.playMain .playInnerGrid .playCheckboxContainer .displayBlock input {
+  width: initial;
+}
+
+@media (max-width: 1000px) {
+  .playMain {
+    padding: 0;
+    margin: 0;
+  }
+  .playMain .playInnerGrid .playContainer {
+    padding: 1em 0.1em;
+  }
+}
+.renderClan {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr;
+  grid-auto-columns: auto;
+  transition: 0.4s;
+  gap: 0;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 20px;
+  margin: 2vw 4vw;
+}
+.renderClan .renderClanContainer p {
+  line-height: 2em;
+}
+.renderClan .renderClanContainer .renderClanSubGrid {
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr;
+  grid-auto-columns: auto;
+  transition: 0.4s;
+  gap: 0;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+}
+.renderClan .renderClanContainer .renderClanSubGrid li {
+  font-size: 14px;
+  padding: 1em;
+  display: inline-block;
+}
+
+@media (max-width: 1700px) {
+  .renderClan .renderClanContainer .renderClanSubGrid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+@media (max-width: 1200px) {
+  .renderClan .renderClanContainer .renderClanSubGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .renderClan .renderClanContainer .renderClanSubGrid li {
+    font-size: 10px;
+  }
+}
+#iAmMember {
+  display: none;
+}
+
+.maudlinBG {
+  background-image: url("../../images/ai/maudlin.jpg");
+}
+
+.relentorBG {
+  background-image: url("../../images/ai/relentor.jpg");
+}
+
+.azraelBG {
+  background-image: url("../../images/ai/azrael.jpg");
+}
+
+.uvesoBG {
+  background-image: url("../../images/ai/uveso.jpg");
+}
+
+.profileMain {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr;
+  grid-auto-columns: auto;
+  transition: 0.4s;
+  gap: 0;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  gap: 20px;
+  margin: 20px 6%;
+  text-align: left;
+}
+.profileMain .profileSubGrid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr;
+  grid-auto-columns: auto;
+  transition: 0.4s;
+  gap: 0;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  height: 100%;
+  transition: 0.4s;
+}
+.profileMain .profileSubGrid:hover .profileContainer, .profileMain .profileSubGrid:hover .profileImage {
+  filter: contrast(1.2);
+  background-color: #000000;
+}
+.profileMain .profileContainer {
+  transition: 0.4s;
+  padding: 2em;
+  height: 100%;
+  background-color: #262626;
+}
+.profileMain .profileContainer h2 {
+  padding: 1em 0.25em 0.25em 0.25em;
+}
+.profileMain .profileImage {
+  transition: 0.4s;
+  height: 100%;
+  padding: 1em;
+  background-position: center;
+  background-size: cover;
+}
+
+@media (max-width: 1200px) {
+  .profileMain {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 1fr;
+    grid-auto-columns: auto;
+    transition: 0.4s;
+    gap: 0;
+    overflow: hidden;
+    position: relative;
+    align-items: center;
+    gap: 15px;
+    margin: 15px 4%;
+  }
+  .profileMain .column6 {
+    grid-column: span 12;
+  }
+}
+@media (max-width: 800px) {
+  .profileMain .profileSubGrid .column4, .profileMain .profileSubGrid .column8 {
+    grid-column: span 12;
+  }
+  .profileMain .profileImage {
+    transition: 0.4s;
+    height: 16em;
+    padding: 0;
+  }
+  .profileMain .profileContainer {
+    transition: 0.4s;
+    padding: 0.5em;
+  }
+}
+.tutorialMain {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr;
+  grid-auto-columns: auto;
+  transition: 0.4s;
+  gap: 0;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  margin: 20px 10%;
+  gap: 10px;
+}
+.tutorialMain .tutorialTop {
+  background-color: #731d00;
+  border: 0.2em solid #000000;
+}
+.tutorialMain .tutorialContainer {
+  height: 100%;
+  background-color: #262626;
+  border: 0.2em solid #000000;
+  transition: 0.4s;
+}
+.tutorialMain .tutorialContainer:hover {
+  background-color: #ec9d36;
+}
+.tutorialMain .tutorialContainer:hover a {
+  color: #000000;
+}
+.tutorialMain .tutorialContainer a {
+  padding: 1em;
+  width: 100%;
+  height: 100%;
+  color: #ffffff;
+}
+
+@media (max-width: 600px) {
+  .tutorialMain {
+    margin: 5px 0%;
+  }
+}
+.changeMain {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr;
+  grid-auto-columns: auto;
+  transition: 0.4s;
+  gap: 0;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  gap: 20px;
+  margin: 20px 6%;
+  text-align: left;
+}
+.changeMain .changeSubGrid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr;
+  grid-auto-columns: auto;
+  transition: 0.4s;
+  gap: 0;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  height: 100%;
+  transition: 0.4s;
+}
+.changeMain .changeContainer {
+  transition: 0.4s;
+  height: 100%;
+  background-color: #262626;
+}
+.changeMain .changeContainer h1 {
+  padding: 1em;
+}
+.changeMain .changeContainer p {
+  line-height: 2em;
+}
+.changeMain .changeContainer li {
+  font-family: "Electrolize", Chakra Petch, "Russo One";
+  font-size: var(--paragraph-font-size);
+  line-height: 2em;
+  padding: 0.25em;
+}
+
+@media (max-width: 1000px) {
+  .changeMain .column4 {
+    grid-column: span 6;
+  }
+}
+@media (max-width: 500px) {
+  .changeMain {
+    gap: 10px;
+    margin: 10px 2%;
+  }
+  .changeMain .column4 {
+    grid-column: span 12;
+  }
+}
+.originalBG {
+  background-image: url("../../images/campaign/original.jpg");
+}
+
+.seraphimBG {
+  background-image: url("../../images/campaign/seraphim.jpg");
+}
+
+.coalitionBG {
+  background-image: url("../../images/campaign/coalition.jpg");
+}
+
+.missionsBG {
+  background-image: url("../../images/campaign/missions.jpg");
+}
+
+.highcharts-figure {
+  min-width: 320px;
+  max-width: 1000px;
+  margin: 30px auto;
+}
+
+.descriptionText {
+  padding: 3em 6em;
+}
+.descriptionText p {
+  line-height: 2em;
+}
+.descriptionText p button {
+  font-size: var(--paragraph-font-size);
+}
+
+.teamMain {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr;
+  grid-auto-columns: auto;
+  transition: 0.4s;
+  gap: 0;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  gap: 20px 20px;
+  text-align: left;
+  margin: 30px 50px;
+}
+.teamMain .teamSelection {
+  cursor: pointer;
+  padding: 2em;
+  text-align: center;
+  background-color: #262626;
+  transition: 0.4s;
+}
+.teamMain .teamSelection h1 {
+  text-transform: uppercase;
+}
+.teamMain .teamSelection img {
+  width: 50%;
+}
+.teamMain .teamSelection:hover {
+  background-color: #ec9d36;
+  color: #000000;
+}
+.teamMain .teamContainer {
+  border: 1em solid #262626;
+  background-image: url("../../images/black0.jpg");
+  background-size: cover;
+  background-color: #262626;
+  padding: 2em;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr;
+  grid-auto-columns: auto;
+  transition: 0.4s;
+  gap: 0;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  display: none;
+}
+.teamMain .teamContainer .teamh1 {
+  font-family: "Russo One", "Electrolize", "Russo One";
+  font-size: var(--title-font-size);
+  padding: 1em;
+}
+.teamMain .teamContainer h2 {
+  padding: 1em;
+  font-size: calc(var(--subtitle-font-size) * 0.8);
+  display: inline-block;
+}
+.teamMain .teamContainer h2 p {
+  line-height: 2em;
+}
+.teamMain .teamContainer img {
+  padding: 10px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 1000px) {
+  .teamMain {
+    margin: 0.25em;
+  }
+  .teamMain .column4 {
+    grid-column: span 6;
+  }
+  .teamMain .teamContainer {
+    padding: 0.5em;
+  }
+  .teamMain .teamContainer .teamh1 {
+    padding: 0.25em;
+  }
+  .teamMain .teamContainer .column6, .teamMain .teamContainer .column4 {
+    grid-column: span 12;
+  }
+}
+@media (max-width: 700px) {
+  .teamMain .teamSelection {
+    padding: 0.25em;
+  }
+  .teamMain .teamSelection h1 {
+    font-size: 14px;
+  }
+}
+#clan-view {
+  text-align: left;
+  margin: 20px 60px;
+}
+
+#clan-info {
+  text-align: left;
+}
+#clan-info td {
+  padding: 10px;
+}
+
+#clan-table button {
+  margin: 0;
+  padding: 0;
+}
+#clan-table .datatable-sorter::before {
+  border-top: 4px solid white;
+}
+#clan-table .datatable-sorter::after {
+  border-bottom: 4px solid white;
+}
+#clan-table tbody tr:hover {
+  background-color: #1f2349;
+  cursor: pointer;
+}
+#clan-table tbody td {
+  text-align: left;
+}
+
+#clan-members button {
+  margin: 0;
+  padding: 0;
+}
+#clan-members .datatable-sorter::before {
+  border-top: 4px solid white;
+}
+#clan-members .datatable-sorter::after {
+  border-bottom: 4px solid white;
+}
+#clan-members tbody td {
+  text-align: left;
+}
+
+.creatorMain {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr;
+  grid-auto-columns: auto;
+  transition: 0.4s;
+  gap: 0;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  padding: 20px 60px;
+  gap: 30px;
+}
+.creatorMain .creatorContainer {
+  position: relative;
+  color: #ffffff;
+  transition: 0.4s;
+  height: 100%;
+  background-color: #262626;
+}
+.creatorMain .creatorContainer img {
+  height: 300px;
+  width: 100%;
+  transition: 0.4s;
+}
+.creatorMain .creatorContainer h1 {
+  position: absolute;
+  top: 0;
+  font-size: 16px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #b2b2b2;
+  background-color: #262626;
+  border: 0.1em solid #3f3f3f;
+}
+.creatorMain .creatorContainer h2 {
+  text-transform: capitalize;
+  padding: 0.5em;
+}
+.creatorMain .creatorContainer h2 p {
+  font-weight: normal;
+  text-transform: none;
+  padding: 0.25em;
+}
+.creatorMain .creatorContainer:hover {
+  color: #000000;
+  background-color: #ec9d36;
+  transform: scale(1.05);
+}
+.creatorMain .creatorContainer:hover img {
+  filter: brightness(1.16);
+}
+
+@media (max-width: 800px) {
+  .creatorMain {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 1fr;
+    grid-auto-columns: auto;
+    transition: 0.4s;
+    gap: 0;
+    overflow: hidden;
+    position: relative;
+    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    padding: 15px;
+    gap: 15px;
+  }
+  .creatorMain .creatorContainer img {
+    height: 200px;
+  }
+}
+.developmentBG {
+  background-image: url("../../images/contribution/development.jpg");
+}
+
+.mapsModsBG {
+  background-image: url("../../images/contribution/twinbarrel.jpg");
+}
+
+.testerBG {
+  background-image: url("../../images/contribution/tester.jpg");
+}
+
+.artworkBG {
+  background-image: url("../../images/contribution/artwork.jpg");
+}
+
+.leaderboardBackground {
+  padding: 7.5vw 12vw;
+}
+
+input {
+  margin: 1em 1em 2px 1em;
+  background-color: #3f3f3f;
+  color: #ffffff;
+  font-size: var(--paragraph-font-size);
+  border: 0.5em solid #262626;
+  border-radius: 10px;
+  z-index: 2;
+  position: relative;
+}
+
+.leaderboardAwards .newLeaderboardContainer:nth-child(odd) {
+  background-color: #101010;
+}
+.leaderboardAwards .newLeaderboardContainer:nth-child(even) {
+  background-color: #262626;
+}
+.leaderboardAwards .newLeaderboardContainer:nth-child(2) {
+  background-color: #594112;
+}
+.leaderboardAwards .newLeaderboardContainer:nth-child(3) {
+  background-color: #737373;
+}
+.leaderboardAwards .newLeaderboardContainer:nth-child(4) {
+  background-color: #5d351d;
+}
+
+.leaderboardNoAwards .newLeaderboardContainer:nth-child(odd) {
+  background-color: #101010;
+}
+.leaderboardNoAwards .newLeaderboardContainer:nth-child(even) {
+  background-color: #262626;
+}
+
+.newLeaderboard {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr;
+  grid-auto-columns: auto;
+  transition: 0.4s;
+  gap: 0;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  border-radius: 20px;
+}
+.newLeaderboard .newLeaderboardCategory {
+  padding: 0.5em;
+}
+.newLeaderboard .newLeaderboardCategory h2 {
+  font-size: 1.2rem;
+  padding: 0;
+}
+.newLeaderboard .newLeaderboardCategory .categoryFilter h2 {
+  padding: 0;
+}
+.newLeaderboard .newLeaderboardCategory .categoryFilter img {
+  display: inline-block;
+  padding: 0 0.1em;
+  height: 0.8em;
+}
+.newLeaderboard .newLeaderboardContainer {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr;
+  grid-auto-columns: auto;
+  transition: 0.4s;
+  gap: 0;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+}
+.newLeaderboard .newLeaderboardContainer h3 {
+  font-size: 0.9rem;
+  padding: 0.75em 0;
+}
+
+.mainLeaderboardContainer {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr;
+  grid-auto-columns: auto;
+  transition: 0.4s;
+  gap: 0;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  padding: 0;
+}
+.mainLeaderboardContainer ul {
+  list-style: none;
+}
+.mainLeaderboardContainer ul li {
+  padding: 0.8em 0;
+}
+.mainLeaderboardContainer p {
+  padding: 0.2em;
+}
+
+.leaderboardFilter {
+  font-family: "Electrolize", Chakra Petch, "Russo One";
+  font-size: 1.2rem;
+  color: #ffffff;
+  background-color: #3f3f3f;
+  padding: 1em 0.25em;
+  margin: 0 1em;
+  border-radius: 20px;
+  text-align: center;
+}
+.leaderboardFilter select {
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+.leaderboardFilter option {
+  padding: 0 0.25em;
+  color: #ffffff;
+  background-color: #262626;
+}
+
+.leaderboardCategory {
+  border-radius: 20px;
+  padding: 1em 0.25em;
+  display: inline-block;
+  place-items: start;
+  font-family: "Electrolize", Chakra Petch, "Russo One";
+  font-size: 1.2rem;
+  letter-spacing: 0;
+}
+.leaderboardCategory .categoryButton:nth-child(odd) {
+  border-radius: 30px 0 0 30px;
+  border-right: 0.1em solid white;
+}
+.leaderboardCategory .categoryButton:nth-child(even) {
+  border-radius: 0 30px 30px 0;
+}
+.leaderboardCategory .categoryContainer {
+  display: inline-block;
+  margin: 0;
+  padding: 0.5em;
+}
+.leaderboardCategory .categoryContainer .categoryButton {
+  display: inline-block;
+  padding: 1em;
+  background-color: #3f3f3f;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.leaderboardCategory .categoryContainer .categoryButton:hover {
+  filter: brightness(2);
+}
+.leaderboardCategory .categoryContainer .exhaustedButton {
+  background-color: #262626;
+  color: #696969;
+  pointer-events: none;
+  cursor: default;
+}
+
+.appearWhenSearching {
+  display: none;
+}
+
+.centerYourself {
+  display: grid;
+  justify-items: center;
+  position: relative;
+}
+
+.searchBar ul {
+  background-color: #262626;
+  color: #b2b2b2;
+  font-size: calc(var(--paragraph-font-size) * 0.9);
+  border-radius: 0 0 10px 10px;
+  text-align: left;
+}
+.searchBar ul li {
+  padding: 0.5em 1em;
+}
+
+.clearButton img {
+  cursor: pointer;
+  margin: 0.5em 0.5em 0 0.5em;
+  border-radius: 10px;
+  z-index: 10;
+  width: 1em;
+  background-color: #3f3f3f;
+  color: #b2b2b2;
+  padding: 0.5em;
+  transition: 0.4s;
+}
+.clearButton img:hover {
+  background-color: #696969;
+  color: #ffffff;
+}
+
+@media (max-width: 600px) {
+  .newLeaderboard .newLeaderboardCategory h2 {
+    font-size: 14px;
+  }
+  .newLeaderboard .newLeaderboardContainer h3 {
+    font-size: 12px;
+  }
+}
+@media (max-width: 800px) {
+  .leaderboardFilter {
+    font-size: 12px;
+  }
+
+  .leaderboardContainer ul {
+    font-size: 12px;
+    padding: 1em 0 0 0;
+  }
+  .leaderboardContainer ul li {
+    text-overflow: ellipsis;
+    font-size: 12px;
+    padding: 1em 0;
+  }
+
+  .clearButton {
+    left: 90%;
+    top: 68%;
+  }
+
+  .leaderboardBackground {
+    padding: 1vw;
+  }
+
+  .leaderboardCategory {
+    padding: 1vw;
+    font-size: var(--paragraph-font-size);
+  }
+  .leaderboardCategory ul li {
+    padding: 0.65em;
+  }
+}
+@media (max-width: 1600px) {
+  .leaderboardContainer ul {
+    font-size: 14px;
+  }
+  .leaderboardContainer ul li {
+    font-size: 14px;
+  }
+
+  .leaderboardFilter {
+    font-size: 14px;
+  }
+}
