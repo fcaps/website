@@ -11,6 +11,7 @@
     "express": "^4.18.1",
     "express-session": "^1.17.3",
     "express-validator": "7.0.1",
+    "grunt-contrib-copy": "^1.0.0",
     "moment": "^2.29.4",
     "node-cache": "^5.1.2",
     "node-fetch": "^2.6.7",
@@ -22,6 +23,7 @@
     "request": "2.88.2",
     "session-file-store": "^1.5.0",
     "showdown": "^2.1.0",
+    "simple-datatables": "^8.0.1",
     "supertest-session": "^5.0.1",
     "url-slug": "^4.0.1"
   },
@@ -45,10 +47,11 @@
     "load-grunt-tasks": "5.1.0",
     "nock": "^13.3.8",
     "octokit": "^3.1.2",
-    "supertest": "^6.3.3",
     "webpack": "^5.89.0",
     "webpack-cli": "^5.1.4",
-    "webpack-manifest-plugin": "^5.0.0"
+    "webpack-manifest-plugin": "^5.0.0",
+    "nock": "^13.3.8",
+    "supertest": "^6.3.3"
   },
   "engines": {
     "node": ">=20.9.0",

@@ -16,8 +16,9 @@ const accountRouter = require("./routes/views/accountRouter")
 const dataRouter = require('./routes/views/dataRouter');
 const setupCronJobs = require("./scripts/cron-jobs")
 const OidcStrategy = require('passport-openidconnect')
-const axios = require('axios')
 const refresh = require('passport-oauth2-refresh')
+const JavaApiClientFactory = require('./lib/JavaApiClient')
+const UserRepository = require('./lib/UserRepository')
 
 const copyFlashHandler = (req, res, next) => {
     res.locals.message = req.flash();
@@ -49,24 +50,19 @@ const configureAuth = () => {
         clientSecret: appConfig.oauth.clientSecret,
         callbackURL: `${appConfig.host}/${appConfig.oauth.callback}`,
         scope: ['openid', 'offline', 'public_profile', 'write_account_data']
-    }, function (iss, sub, profile, jwtClaims, accessToken, refreshToken, params, verified) {
-        axios.get(
-            appConfig.apiUrl + '/me',
-            {
-                headers: { Authorization: `Bearer ${accessToken}` }
-            }).then((res) => {
-            const user = res.data
-            user.token = accessToken
-            user.refreshToken = refreshToken
-            user.data.attributes.token = accessToken
-            user.data.id = user.data.attributes.userId
+    }, async function (iss, sub, profile, jwtClaims, accessToken, refreshToken, params, verified) {
+            const apiClient = JavaApiClientFactory(appConfig.apiUrl, oAuthPassport)
+            const userRepository = new UserRepository(apiClient)
 
-            return verified(null, user)
-        }).catch(e => {
-            console.error('[Error] views/auth.js::passport::verify failed with "' + e.toString() + '"')
+            try {
+                const user = await userRepository.fetchUser(oAuthPassport)
 
-            return verified(null, null)
-        })
+                return verified(null, user)
+            } catch (e) {
+                console.error('[Error] oAuth verify failed with "' + e.toString() + '"')
+
+                return verified(null, null)
+            }
     }
     )
 
@@ -138,7 +134,7 @@ module.exports.setup = (app) => {
     app.use(middleware.injectServices)
 
     app.use(flash())
-    app.use(middleware.username)
+    app.use(middleware.populatePugGlobals)
     app.use(middleware.webpackAsset)
     app.use(copyFlashHandler)
 }
