@@ -1,4 +1,7 @@
 const WordpressServiceFactory = require("../lib/WordpressServiceFactory");
+const JavaApiClientFactory = require('../lib/JavaApiClient')
+const LeaderboardService = require('../lib/LeaderboardService')
+const cacheService = require('../lib/CacheService')
 const appConfig = require("../config/app");
 const wordpressService = WordpressServiceFactory(appConfig.wordpressUrl)
 const fs = require('fs');
@@ -56,6 +59,11 @@ exports.isAuthenticated = (redirectUrlAfterLogin = null, isApiRequest = false) =
 exports.injectServices =  function(req, res, next) {
     req.services = {
         wordpressService: wordpressService
+    }
+
+    if (req.isAuthenticated()) {
+        req.services.javaApiClient = JavaApiClientFactory(appConfig.apiUrl, req.user)
+        req.services.leaderboardService = new LeaderboardService(cacheService, new LeaderboardRepository(req.services.javaApiClient))
     }
 
     next()
