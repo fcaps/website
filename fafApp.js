@@ -6,38 +6,38 @@ const FileStore = require('session-file-store')(session)
 const passport = require('passport')
 const flash = require('connect-flash')
 const middleware = require('./routes/middleware')
-const defaultRouter = require('./routes/views/defaultRouter')
-const authRouter = require('./routes/views/auth')
-const staticMarkdownRouter = require('./routes/views/staticMarkdownRouter')
-const newsRouter = require('./routes/views/news')
-const leaderboardRouter = require('./routes/views/leaderboardRouter')
-const clanRouter = require('./routes/views/clanRouter')
-const accountRouter = require('./routes/views/accountRouter')
-const dataRouter = require('./routes/views/dataRouter')
-const setupCronJobs = require('./scripts/cron-jobs')
+const defaultRouter = require("./routes/views/defaultRouter")
+const authRouter = require("./routes/views/auth")
+const staticMarkdownRouter = require("./routes/views/staticMarkdownRouter")
+const newsRouter = require("./routes/views/news")
+const leaderboardRouter = require("./routes/views/leaderboardRouter")
+const clanRouter = require("./routes/views/clanRouter")
+const accountRouter = require("./routes/views/accountRouter")
+const dataRouter = require('./routes/views/dataRouter');
+const setupCronJobs = require("./scripts/cron-jobs")
 const OidcStrategy = require('passport-openidconnect')
 const refresh = require('passport-oauth2-refresh')
 const JavaApiClientFactory = require('./lib/JavaApiClient')
 const UserRepository = require('./lib/UserRepository')
 
 const copyFlashHandler = (req, res, next) => {
-    res.locals.message = req.flash()
-    next()
+    res.locals.message = req.flash();
+    next();
 }
 const notFoundHandler = (req, res) => {
-    res.status(404).render('errors/404')
+    res.status(404).render('errors/404');
 }
 
 const errorHandler = (err, req, res, next) => {
     console.error('[error] Incoming request to"', req.originalUrl, '"failed with error "', err.toString(), '"')
     if (res.headersSent) {
-        return next(err)
+        return next(err);
     }
 
-    res.status(500).render('errors/500')
+    res.status(500).render('errors/500');
 }
 
-const loadAuth = () => {
+const configureAuth = () => {
     passport.serializeUser((user, done) => done(null, user))
     passport.deserializeUser((user, done) => done(null, user))
 
@@ -51,24 +51,20 @@ const loadAuth = () => {
         callbackURL: `${appConfig.host}/${appConfig.oauth.callback}`,
         scope: ['openid', 'offline', 'public_profile', 'write_account_data']
     }, async function (iss, sub, profile, jwtClaims, accessToken, refreshToken, params, verified) {
-        const oAuthPassport = {
-            token: accessToken,
-            refreshToken
-        }
+            const apiClient = JavaApiClientFactory(appConfig.apiUrl, oAuthPassport)
+            const userRepository = new UserRepository(apiClient)
 
-        const apiClient = JavaApiClientFactory(appConfig.apiUrl, oAuthPassport)
-        const userRepository = new UserRepository(apiClient)
+            try {
+                const user = await userRepository.fetchUser(oAuthPassport)
 
-        try {
-            const user = await userRepository.fetchUser(oAuthPassport)
+                return verified(null, user)
+            } catch (e) {
+                console.error('[Error] oAuth verify failed with "' + e.toString() + '"')
 
-            return verified(null, user)
-        } catch (e) {
-            console.error('[Error] oAuth verify failed with "' + e.toString() + '"')
-
-            return verified(null, null)
-        }
-    })
+                return verified(null, null)
+            }
+    }
+    )
 
     passport.use(appConfig.oauth.strategy, authStrategy)
     refresh.use(appConfig.oauth.strategy, authStrategy)
@@ -80,8 +76,8 @@ module.exports.setupCronJobs = () => {
 
 module.exports.startServer = (app) => {
     app.listen(appConfig.expressPort, () => {
-        console.log(`Express listening on port ${appConfig.expressPort}`)
-    })
+        console.log(`Express listening on port ${appConfig.expressPort}`);
+    });
 }
 
 module.exports.loadRouters = (app) => {
@@ -119,7 +115,7 @@ module.exports.setup = (app) => {
 
     app.use(express.json())
     app.use(bodyParser.json())
-    app.use(bodyParser.urlencoded({ extended: false }))
+    app.use(bodyParser.urlencoded({extended: false}))
 
     app.use(session({
         resave: false,
@@ -133,7 +129,7 @@ module.exports.setup = (app) => {
     }))
     app.use(passport.initialize())
     app.use(passport.session())
-    loadAuth()
+    configureAuth()
 
     app.use(middleware.injectServices)
 

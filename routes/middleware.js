@@ -54,7 +54,7 @@ exports.isAuthenticated = (redirectUrlAfterLogin = null, isApiRequest = false) =
     }
 }
 
-exports.injectServices = function (req, res, next) {
+exports.injectServices =  function(req, res, next) {
     req.services = {
         wordpressService: wordpressService
     }

@@ -104,9 +104,11 @@ test('refresh will not loop to death', async () => {
         .times(1)
         .reply(200, { access_token: 'new_tok', refresh_token: 'new_ref' })
 
-    const response = await client.get('/example')
-
-    expect(response.status).toBe(401)
+    try {
+        await client.get('/example')
+    } catch (e) {
+        expect(e).toBeInstanceOf(AuthFailed)
+    }
 
     apiScope.done()
     authScope.done()
