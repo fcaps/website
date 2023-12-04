@@ -1,5 +1,7 @@
 const express = require('../../ExpressApp')
 const router = express.Router()
+
+const { query, validationResult } = require('express-validator');
 const middlewares = require('../middleware')
 
 router.get('/linkGog', middlewares.isAuthenticated(), require('./account/get/linkGog'))
@@ -17,7 +19,11 @@ router.post('/changeEmail', middlewares.isAuthenticated(), require('./account/po
 router.get('/changeUsername', middlewares.isAuthenticated(), require('./account/get/changeUsername'))
 router.post('/changeUsername', middlewares.isAuthenticated(), require('./account/post/changeUsername'))
 
-router.get('/password/confirmReset', require('./account/get/confirmPasswordReset'))
+router.get('/password/confirmReset', [
+    query('token').notEmpty().withMessage('Token is required'),
+    query('Username').notEmpty().withMessage('Username is required')],
+    require('./account/get/confirmPasswordReset')
+  )
 router.post('/password/confirmReset', require('./account/post/confirmPasswordReset'))
 
 router.get('/requestPasswordReset', require('./account/get/requestPasswordReset'))
