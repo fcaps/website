@@ -1,6 +1,7 @@
 const fs = require('fs')
 const { WordpressService } = require('../src/backend/services/WordpressService')
 const { LeaderboardService } = require('../src/backend/services/LeaderboardService')
+const appConfig = require('../src/backend/config/app')
 const nock = require('nock')
 nock.disableNetConnect()
 nock.enableNetConnect('127.0.0.1')
@@ -34,6 +35,10 @@ beforeEach(() => {
 
         throw new Error('do we need to change the mock?')
     })
+
+    nock(appConfig.apiUrl)
+        .post('/users/buildSteamPasswordResetUrl')
+        .reply(200, { steamUrl: 'http://localhost/test-steam-reset' })
 })
 
 afterEach(() => {
