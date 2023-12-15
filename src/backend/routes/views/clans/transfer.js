@@ -2,19 +2,23 @@ const { JavaApiError } = require('../../../services/ApiErrors')
 
 exports = module.exports = [
     async (req, res) => {
-        const newOwnerMemberId = req.params.memberId
-        const clanId = req.requestContainer.get('UserService').getUser().clan.id
+        if (!req.requestContainer.get('UserService').getUser()?.clan?.id) {
+            await req.asyncFlash('error', "You don't own a clan")
+
+            return res.redirect('/clans')
+        }
+
+        const newOwnerId = parseInt(req.params.userId)
         try {
             await req.requestContainer
                 .get('ClanManagementService')
-                .transferOwnership(newOwnerMemberId, clanId)
+                .transferOwnership(newOwnerId)
             await req.asyncFlash('info', 'Clan ownership transferred')
 
-            return res.redirect(`/clans/view/${clanId}`, {
-                clan_tag: req.body.clan_tag,
-                clan_name: req.body.clan_name,
-                clan_description: req.body.clan_description,
-            })
+            return res.redirect(
+                '/clans/view/' +
+                    req.requestContainer.get('UserService').getUser().clan.id
+            )
         } catch (e) {
             let message = e.toString()
             if (e instanceof JavaApiError && e.error?.errors) {
@@ -22,11 +26,10 @@ exports = module.exports = [
             }
 
             await req.asyncFlash('error', message)
-            return res.redirect(`/clans/view/${clanId}`, {
-                clan_tag: req.body.clan_tag,
-                clan_name: req.body.clan_name,
-                clan_description: req.body.clan_description,
-            })
+            return res.redirect(
+                '/clans/view/' +
+                    req.requestContainer.get('UserService').getUser().clan.id
+            )
         }
     },
 ]
